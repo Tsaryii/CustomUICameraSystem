@@ -102,12 +102,6 @@ MainDevice := class(creative_device):
                     AnyButtonPressed.Signal(Agent)
                 block:
                     loop:
-                        testAgent := AnyButtonPressed.Await()
-                        Print("{inbutton.Name} was pushed; checking testAgent")
-                        if(testAgent = Agent):
-                            Print("clearing old memory")
-                            break
-                    loop:
                         testAgent := FailedToCreateCanvas.Await()
                         Print("{inbutton.Name} received that a canvas had failed, checking if agents coorelates.")
                         if(testAgent = Agent):
